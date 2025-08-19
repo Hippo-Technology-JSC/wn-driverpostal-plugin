@@ -87,12 +87,12 @@ class Plugin extends PluginBase
         MailSetting::extend(function ($model) {
             $model->bindEvent('model.beforeValidate', function () use ($model) {
                 $model->rules['postal_api_key']  = 'required_if:send_mode,' . self::MODE_POSTAL;
-                $model->rules['postal_base_url'] = 'required_if:send_mode,' . self::MODE_POSTAL . '|url';
+                $model->rules['postal_base_uri'] = 'required_if:send_mode,' . self::MODE_POSTAL . '|url';
             });
 
             // default (có thể lấy từ .env)
             $model->postal_api_key  = config('services.driverpostal.api_key', env('POSTAL_API_KEY'));
-            $model->postal_base_url = config('services.driverpostal.base_url', env('POSTAL_BASE_URL', 'http://localhost:5001'));
+            $model->postal_base_uri = config('services.driverpostal.base_uri', env('POSTAL_BASE_URI', 'http://localhost:5001'));
         });
     }
 
@@ -109,10 +109,10 @@ class Plugin extends PluginBase
             $field->options(array_merge($field->options(), [self::MODE_POSTAL => 'Hippo Postal (HTTP API)']));
 
             $widget->addTabFields([
-                'postal_base_url' => [
-                    'label'        => 'Postal Base URL',
-                    'placeholder'      => 'hippo.postal::lang.postal_base_url_placeholder',
-                    'commentAbove' => 'hippo.postal::lang.postal_base_url_comment',
+                'postal_base_uri' => [
+                    'label'        => 'Postal Base URI',
+                    'placeholder'      => 'hippo.postal::lang.postal_base_uri_placeholder',
+                    'commentAbove' => 'hippo.postal::lang.postal_base_uri_comment',
                     'commentHtml' => true,
                     'tab'          => 'system::lang.mail.general',
                     'span'         => 'left',
