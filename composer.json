@@ -1,6 +1,6 @@
 {
-    "name": "hippo/wn-postal-plugin",
-    "description": "Driver that adds support for the AWS SDK (Postal mail driver) to WinterCMS",
+    "name": "hippo/wn-driverpostal-plugin",
+    "description": "Driver that adds support for the Postal SDK (Postal mail driver) to WinterCMS",
     "type": "winter-plugin",
     "homepage": "https://github.com/hippotechno/wn-postal-plugin",
     "keywords": ["postal", "driver"],
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "aws/aws-sdk-php": "^3.198.1",
-        "league/flysystem-aws-s3-v3": "^3.0"
+        "composer/installers": "~1.0",
+        "postal/postal": "*"
     }
 }

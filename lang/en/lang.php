@@ -12,9 +12,4 @@ return [
     'postal_key' => 'Postal key',
     'postal_key_placeholder' => 'Enter your Postal API key',
     'postal_key_comment' => 'On Postal UI → Servers → Credentials → type API to create & copy API key.',
-
-    'stream_uploads' => [
-        'upload_failed' => 'The file failed to upload',
-        'max_size_exceeded' => 'The filesize exceeds the maximum allowed upload size (:size)',
-    ],
 ];
