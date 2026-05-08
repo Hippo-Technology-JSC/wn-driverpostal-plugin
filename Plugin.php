@@ -74,7 +74,7 @@ class Plugin extends PluginBase
         MailSetting::extend(function ($model) {
             $model->bindEvent('model.beforeValidate', function () use ($model) {
                 $model->rules['postal_api_key']  = 'required_if:send_mode,' . self::MODE_POSTAL;
-                $model->rules['postal_base_uri'] = 'required_if:send_mode,' . self::MODE_POSTAL . '|url';
+                $model->rules['postal_base_uri'] = 'required_if:send_mode,' . self::MODE_POSTAL;
             });
 
             // default (có thể lấy từ .env)
